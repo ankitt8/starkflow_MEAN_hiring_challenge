@@ -1,0 +1,19 @@
+<!-- <p>{{todo.todo_title | uppercase }}</p>
+<p>{{todo.todo_description}}</p>
+<div>
+    <label>
+        Todo Title: <input [(ngModel)]="todo.todo_title" placeholder="Todo Title"/>
+    </label>
+</div> -->
+
+<div>
+    <h2>My Todos</h2>
+    <ul class="todos">
+        <li [class.selected]="todo === selectedTodo" *ngFor="let todo of todos" (click)="onSelect(todo)">
+            {{todo.todo_title}}
+        </li>
+
+    </ul>
+</div>
+
+<app-todo-detail [todo]="selectedTodo"></app-todo-detail>

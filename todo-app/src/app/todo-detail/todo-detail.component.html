@@ -1,0 +1,8 @@
+<div *ngIf="todo">
+    <h2>{{todo.todo_title | uppercase }} Details</h2>
+    <div>
+        <label>
+            <input [(ngModel)]="todo.todo_description" placeholder="Update Todo Description">
+        </label>
+    </div>
+</div>
