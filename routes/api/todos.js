@@ -8,6 +8,7 @@ router.get('/todos', (req, res) => {
         if (err) {
             console.log(err)
         } else {
+            res.header("Access-Control-Allow-Origin", "http://localhost:4200");
             res.json(todos);
         }
     })
@@ -15,6 +16,7 @@ router.get('/todos', (req, res) => {
 
 // add the todo
 router.post('/add', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     let todo = new Todo(req.body);
     console.log(todo)
     todo.save()
@@ -28,6 +30,7 @@ router.post('/add', (req, res) => {
 
 // update todo by id
 router.post('/update/:id', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     let id = req.params.id;
     console.log(id)
     let todo = Todo.findById(id, (err, todo) => {
@@ -51,6 +54,7 @@ router.post('/update/:id', (req, res) => {
 
 // delete todo by id
 router.get('/delete/:id', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     let id = req.params.id;
     Todo.findByIdAndRemove(id, (err, todo) => {
         if(err) {
