@@ -3,6 +3,7 @@ import { Todo } from '../todo'
 import { from } from 'rxjs';
 import { TODOS } from '../mock-todos'
 import { TodoService } from '../todo.service'
+import { faEdit, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-todos',
@@ -10,6 +11,9 @@ import { TodoService } from '../todo.service'
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
+  faEdit = faEdit;
+  faTrash = faTrash;
+  faPlus = faPlus;
   todos : Todo[];
   selectedTodo: Todo;
   constructor(private todoService: TodoService) { }

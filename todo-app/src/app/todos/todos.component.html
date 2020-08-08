@@ -6,11 +6,15 @@
     </label>
 </div> -->
 
-<div>
-    <h2>My Todos</h2>
+<div class="todo-container">
+    <h2 >My Todos </h2> <span><fa-icon [icon]="faPlus"></fa-icon> <a href="http://localhost:3000/api/add">Add</a>  </span>
     <ul class="todos">
-        <li [class.selected]="todo === selectedTodo" *ngFor="let todo of todos" (click)="onSelect(todo)">
-            {{todo.todo_title}}
+        <li class = "todo" [class.selected]="todo === selectedTodo" *ngFor="let todo of todos" (click)="onSelect(todo)">
+            <span>
+                {{todo.todo_title}}
+                <fa-icon [icon]="faEdit"></fa-icon><a href="http://localhost:3000/api/edit">Edit</a>
+                <fa-icon [icon]="faTrash"></fa-icon><a href="http://localhost:3000/api/delete/:"></a> Delete
+            </span>
         </li>
 
     </ul>
